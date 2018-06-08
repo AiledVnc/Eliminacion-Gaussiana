@@ -3,6 +3,7 @@
 void intercambia(double*** , int, int, int);
 void imprimirMatriz(double**, int, int);
 void suma(double***, int, int, double, int);
+void multiplica(double***, int, double, int);
 int main()
 {
   int variable, i , j;
@@ -34,7 +35,7 @@ int main()
   //Ver matriz
   imprimirMatriz(matriz, filas, columnas);
   //Respuesta
-  suma(&matriz, 1, 0, -5, columnas);
+  multiplica(&matriz, 1, 1.0/6.0, columnas);
   imprimirMatriz(matriz, filas, columnas);
   //Liberar memoria
   for (i = 0; i < filas; i++)
@@ -82,5 +83,15 @@ void suma(double*** matriz, int fila1, int fila2, double constante, int numColum
   for (j = 0; j < numColums; j++)
   {
     (*matriz)[fila1][j] = (*matriz)[fila1][j] + (*matriz)[fila2][j] * constante;
+  }
+}
+
+void multiplica(double*** matriz, int fila, double constante, int numColums)
+{
+  int j;
+  printf("constante %f\n", constante);
+  for (j = 0; j < numColums; j++)
+  {
+    (*matriz)[fila][j] = (*matriz)[fila][j] * constante;
   }
 }
