@@ -1,9 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
+<<<<<<< HEAD
 void intercambia(double*** , int, int, int);
 void imprimirMatriz(double**, int, int);
 void suma(double***, int, int, double, int);
 void multiplica(double***, int, double, int);
+=======
+void intercambia(double*** , int, int, int); //(matriz, fila, fila a intercambiar, tamaño)
+void imprimirMatriz(double**, int, int);
+void suma(double***, int, int, double, int);
+void multiplica(double***, int, double, int);
+void algoritmo(double***, int, int);
+>>>>>>> algoritmo
 int main()
 {
   int variable, i , j;
@@ -35,7 +43,11 @@ int main()
   //Ver matriz
   imprimirMatriz(matriz, filas, columnas);
   //Respuesta
+<<<<<<< HEAD
   multiplica(&matriz, 1, 1.0/6.0, columnas);
+=======
+  algoritmo(&matriz, filas, columnas);
+>>>>>>> algoritmo
   imprimirMatriz(matriz, filas, columnas);
   //Liberar memoria
   for (i = 0; i < filas; i++)
@@ -89,9 +101,32 @@ void suma(double*** matriz, int fila1, int fila2, double constante, int numColum
 void multiplica(double*** matriz, int fila, double constante, int numColums)
 {
   int j;
+<<<<<<< HEAD
   printf("constante %f\n", constante);
+=======
+>>>>>>> algoritmo
   for (j = 0; j < numColums; j++)
   {
     (*matriz)[fila][j] = (*matriz)[fila][j] * constante;
   }
 }
+<<<<<<< HEAD
+=======
+
+void algoritmo(double*** matriz, int filas, int numColums)
+{
+  int i, j;
+  for (i = 0; i < filas; i++)
+  {
+    multiplica(matriz, i, 1.0 / (*matriz)[i][i], numColums);
+    for (j = 0; j < filas; j++)
+    {
+      if (j == i)
+      {
+        continue;
+      }
+      suma(matriz, j, i, - 1.0 * (*matriz)[j][i], numColums);
+    }
+  }
+}
+>>>>>>> algoritmo
