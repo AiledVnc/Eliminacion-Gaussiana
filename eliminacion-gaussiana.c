@@ -1,23 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 void intercambia(double*** , int, int, int);
 void imprimirMatriz(double**, int, int);
 void suma(double***, int, int, double, int);
 void multiplica(double***, int, double, int);
-=======
->>>>>>> 17ab423dd1b4eecfe4246f37211464d65d372148
 void intercambia(double*** , int, int, int); //(matriz, fila, fila a intercambiar, tamaño)
 void imprimirMatriz(double**, int, int);
 void suma(double***, int, int, double, int);
 void multiplica(double***, int, double, int);
 void algoritmo(double***, int, int);
-<<<<<<< HEAD
-=======
->>>>>>> algoritmo
->>>>>>> 17ab423dd1b4eecfe4246f37211464d65d372148
 int main()
 {
   int variable, i , j;
@@ -45,36 +36,13 @@ int main()
     printf("Dame b%d:\t", i);
     scanf("%lf", &matriz[i][j]);
   }
-
-  //Ver matriz
-<<<<<<< HEAD
-
-  imprimirMatriz(matriz, filas, columnas);
-  //Validacion
-  for (i = 0; i < filas; i++)
-  {
-    if (matriz[i][filas - 1] == 0)
-    {
-      intercambia(&matriz, filas - 1, 0, columnas);
-    }
-    else if (matriz[i][i] == 0)
-    {
-      intercambia(&matriz, i, i + 1, columnas);
-    }
-  }
   //Respuesta
   multiplica(&matriz, 1, 1.0/6.0, columnas);
   algoritmo(&matriz, filas, columnas);
-
-=======
   imprimirMatriz(matriz, filas, columnas);
   //Respuesta
-<<<<<<< HEAD
   multiplica(&matriz, 1, 1.0/6.0, columnas);
-=======
   algoritmo(&matriz, filas, columnas);
->>>>>>> algoritmo
->>>>>>> 17ab423dd1b4eecfe4246f37211464d65d372148
   imprimirMatriz(matriz, filas, columnas);
   //Liberar memoria
   for (i = 0; i < filas; i++)
@@ -84,9 +52,6 @@ int main()
   free(matriz);
   return 0;
 }
-
-
-
 
 void imprimirMatriz(double** matriz, int filas, int columnas)
 {
@@ -113,7 +78,6 @@ void intercambia(double*** matriz, int fila1, int fila2, int size)
     (*matriz)[fila2][k] = temp;
   }
 }
-
 //M[i][j] = M[i][j] + CM[k][j]
 //f1 = f1 + Cf2
 void suma(double*** matriz, int fila1, int fila2, double constante, int numColums)
@@ -124,28 +88,17 @@ void suma(double*** matriz, int fila1, int fila2, double constante, int numColum
     (*matriz)[fila1][j] = (*matriz)[fila1][j] + (*matriz)[fila2][j] * constante;
   }
 }
-
 void multiplica(double*** matriz, int fila, double constante, int numColums)
 {
   int j;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
   printf("constante %f\n", constante);
-=======
->>>>>>> algoritmo
->>>>>>> 17ab423dd1b4eecfe4246f37211464d65d372148
+
   for (j = 0; j < numColums; j++)
   {
     (*matriz)[fila][j] = (*matriz)[fila][j] * constante;
   }
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 17ab423dd1b4eecfe4246f37211464d65d372148
-
 void algoritmo(double*** matriz, int filas, int numColums)
 {
   int i, j;
@@ -162,7 +115,3 @@ void algoritmo(double*** matriz, int filas, int numColums)
     }
   }
 }
-<<<<<<< HEAD
-=======
->>>>>>> algoritmo
->>>>>>> 17ab423dd1b4eecfe4246f37211464d65d372148
